@@ -10,6 +10,17 @@ blocks:
       env_vars:
         - name: APP_ENV
           value: prod
+      prologue:
+        commands:
+          - sem-version python 3.7
+          - # Add --local pip bin to $PATH
+            - export PATH=$HOME/.local/bin:$PATH
+            - checkout
+            - mkdir .pip_cache
+            - cache restore pip-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt),pip-$SEMAPHORE_GIT_BRANCH,pip-master
+            # Use --user to avoid permission conflicts
+            - pip install --user --cache-dir .pip_cache -r requirements.txt
+            - cache store pip-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt) .pip_cache
       jobs:
       - name: Docker build
         commands:
@@ -20,9 +31,7 @@ blocks:
       jobs:
       - name: RSpec
         commands:
-          - sudo apt install python3-pip -y
-          - python3 -m pip install -r /requirements.txt
-          - python3 -m unittest tests/*.py
+          - python -m unittest tests/*.py
           - checkout
           - echo "Unit tests"
       - name: Lint code
