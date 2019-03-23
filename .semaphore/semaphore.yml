@@ -14,14 +14,13 @@ blocks:
       - name: Docker build
         commands:
           - checkout
-          - sudo apt-get install python3
           - echo "Installing dependenices"
-          - sudo apt install python3-pip -y
   - name: "Unit tests"
     task:
       jobs:
       - name: RSpec
         commands:
+          - sudo apt install python3-pip -y
           - python3 -m pip install -r requirements.txt
           - python3 -m unittest tests/*.py
           - checkout
@@ -29,7 +28,7 @@ blocks:
       - name: Lint code
         commands:
           - sudo apt install pycodestyle -y
-          - cd /home/semaphore/QuoteTDD/
+          - ls
           - pycodestyle **/*.py
           - checkout
           - echo "make lint"
