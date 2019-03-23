@@ -32,6 +32,8 @@ blocks:
           - echo "Unit tests"
       - name: Lint code
         commands:
+          - sudo apt install pycodestyle -y
+          - ls
           - pycodestyle ./**/*.py
           - checkout
           - echo "make lint"
