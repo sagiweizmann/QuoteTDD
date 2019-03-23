@@ -18,7 +18,7 @@ blocks:
           - echo "Installing dependenices"
           - sudo apt install python3-pip -y
   - name: "Unit tests"
-    task:git
+    task:
       jobs:
       - name: RSpec
         commands:
