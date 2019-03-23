@@ -15,7 +15,8 @@ blocks:
         commands:
           - checkout
           - sudo apt-get install python3
-          - echo "installing depandancies"
+          - echo "Installing dependenices"
+          - pip3 install -r requirements.txt
   - name: "Unit tests"
     task:
       jobs:
