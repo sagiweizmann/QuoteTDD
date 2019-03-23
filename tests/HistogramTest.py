@@ -11,7 +11,7 @@ class HistogramTest(unittest.TestCase):
     def test1(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("../mockquote/mockqoute1.json") as f:
+        with open("mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
@@ -22,7 +22,7 @@ class HistogramTest(unittest.TestCase):
     def test2(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("../mockquote/mockqoute1.json") as f:
+        with open("mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
@@ -33,7 +33,7 @@ class HistogramTest(unittest.TestCase):
     def test3(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("../mockquote/mockqoute1.json") as f:
+        with open("mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
@@ -46,7 +46,7 @@ class HistogramTest(unittest.TestCase):
     def test4(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("../mockquote/mockqoute1.json") as f:
+        with open("mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
@@ -54,10 +54,10 @@ class HistogramTest(unittest.TestCase):
         assert histogram_dict['buy'] == 2
 
     @patch('src.Quote.Quote.get_quote_as_dict')
-    def test3(self, func_quote):
+    def test5(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("../mockquote/mockqoute1.json") as f:
+        with open("mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
