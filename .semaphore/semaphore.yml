@@ -27,15 +27,15 @@ blocks:
       jobs:
       - name: RSpec
         commands:
-          - python -m unittest ./tests/*.py
           - checkout
+          - python -m unittest tests/*.py
           - echo "Unit tests"
       - name: Lint code
         commands:
+          - checkout
           - sudo apt install pycodestyle -y
           - ls
-          - pycodestyle ./**/*.py
-          - checkout
+          - pycodestyle **/*.py
           - echo "make lint"
 
   - name: "Push Image"
