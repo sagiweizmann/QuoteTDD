@@ -16,8 +16,8 @@ blocks:
       jobs:
       - name: Docker build
         commands:
-          - export PATH=$HOME/.local/bin:$PATH
           - checkout
+          - export PATH=$HOME/.local/bin:$PATH
           - mkdir .pip_cache
           - cache restore pip-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt),pip-$SEMAPHORE_GIT_BRANCH,pip-master
           - pip install --cache-dir .pip_cache -r requirements.txt
