@@ -27,14 +27,12 @@ blocks:
       jobs:
       - name: RSpec
         commands:
-          - python -m unittest tests/*.py
+          - python -m unittest ./tests/*.py
           - checkout
           - echo "Unit tests"
       - name: Lint code
         commands:
-          - sudo apt install pycodestyle -y
-          - ls
-          - pycodestyle **/*.py
+          - pycodestyle ./**/*.py
           - checkout
           - echo "make lint"
 
