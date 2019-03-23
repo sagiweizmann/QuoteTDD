@@ -16,7 +16,8 @@ blocks:
           - checkout
           - sudo apt-get install python3
           - echo "Installing dependenices"
-          - pip install -r requirements.txt
+          - python3 -m pip -r requirements.txt
+          - sudo apt install pycodestyle -y
   - name: "Unit tests"
     task:
       jobs:
@@ -24,7 +25,7 @@ blocks:
         commands:
           - checkout
           - echo "Unit tests"
-          -  python3 -m unittest tests/*.py
+          - python3 -m unittest tests/*.py
       - name: Lint code
         commands:
           - sudo apt install pycodestyle -y
