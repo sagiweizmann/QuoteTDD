@@ -17,16 +17,15 @@ blocks:
           - sudo apt-get install python3
           - echo "Installing dependenices"
           - sudo apt install python3-pip -y
-          - python3 -m pip install -r requirements.txt
-          - sudo apt install pycodestyle -y
   - name: "Unit tests"
-    task:
+    task:git
       jobs:
       - name: RSpec
         commands:
+          - python3 -m pip install -r requirements.txt
+          - python3 -m unittest tests/*.py
           - checkout
           - echo "Unit tests"
-          - python3 -m unittest tests/*.py
       - name: Lint code
         commands:
           - sudo apt install pycodestyle -y
