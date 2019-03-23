@@ -22,6 +22,8 @@ class Histogram:
 
         :param quote_str:
         """
-        word_counter_dict = self.word_counter(quote_str)
-        for k, v in sorted(word_counter_dict.items(), key=lambda kv: kv[1], reverse=True):
+        word_dict = self.word_counter(quote_str)
+        items = word_dict.items()
+        after_sort = sorted(items, key=lambda kv: kv[1], reverse=True)
+        for k, v in after_sort:
             print(k, ', ' + str(v))
