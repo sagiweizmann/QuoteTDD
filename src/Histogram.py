@@ -17,7 +17,7 @@ class Histogram:
                 word_counter[word] = 1
         return word_counter
 
-    def print_sorted(self, quote_str):
+    def ret_sorted(self, quote_str):
         """
 
         :param quote_str:
@@ -25,5 +25,9 @@ class Histogram:
         word_dict = self.word_counter(quote_str)
         items = word_dict.items()
         after_sort = sorted(items, key=lambda kv: kv[1], reverse=True)
-        for k, v in after_sort:
+        return after_sort
+
+    @staticmethod
+    def print_dict(histogram_dict):
+        for k, v in histogram_dict:
             print(k, ', ' + str(v))
