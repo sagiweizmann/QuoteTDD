@@ -24,7 +24,8 @@ blocks:
       - name: RSpec
         commands:
           - checkout
-          - echo "unit test"
+          - echo "Unit tests"
+          -  python -m unittest tests/*.py
       - name: Lint code
         commands:
           - checkout
