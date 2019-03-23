@@ -14,7 +14,7 @@ blocks:
       - name: Docker build
         commands:
           - checkout
-          - apt-get install python3
+          - sudo apt-get install python3
           - echo "installing depandancies"
   - name: "Unit tests"
     task:
