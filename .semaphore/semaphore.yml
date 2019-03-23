@@ -30,6 +30,7 @@ blocks:
       - name: Lint code
         commands:
           - sudo apt install pycodestyle -y
+          - cd /home/semaphore/QuoteTDD/
           - pycodestyle **/*.py
           - checkout
           - echo "make lint"
