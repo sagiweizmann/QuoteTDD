@@ -13,5 +13,6 @@ class HistogramTest(unittest.TestCase):
             mock_quote.get_quote_as_dict.return_value = json.load(f)
         quote = mock_quote.get_quote()
         self.assertEqual(4, 4, quote)
+
     def test2(self):
         pass

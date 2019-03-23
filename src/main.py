@@ -3,10 +3,10 @@ from src.Histogram import Histogram
 from src.Translate import Translate
 
 
-QUOTE_OBJ = Quote()
-HISTOGRAM_OBJ = Histogram()
-TRANSLATE_OBJ = Translate()
-QUOTE = QUOTE_OBJ.get_quote()
-print(QUOTE)
-print(TRANSLATE_OBJ.translate(QUOTE))
-HISTOGRAM_OBJ.print_sorted(QUOTE)
+quote_obj = Quote()
+histogram_obj = Histogram()
+translate_obj = Translate()
+quote = quote_obj.get_quote()
+print(quote)
+print(translate_obj.translate(quote))
+histogram_obj.print_sorted(quote)
