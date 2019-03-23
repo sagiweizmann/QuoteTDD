@@ -25,11 +25,13 @@ blocks:
         commands:
           - checkout
           - echo "Unit tests"
-          -  python -m unittest tests/*.py
+          -  python3 -m unittest tests/*.py
       - name: Lint code
         commands:
           - checkout
           - echo "make lint"
+          - pip3 istall pycodestyle
+          - pycodestyle **/*.py
   - name: "Push Image"
     task:
       jobs:
