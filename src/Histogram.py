@@ -1,6 +1,12 @@
 class Histogram:
     @staticmethod
     def word_counter(quote_str):
+        """
+
+        :return:
+        :param quote_str:
+        :return:
+        """
         translate = quote_str.maketrans({char: None for char in "'.,:*!"})
         cleaned_words = quote_str.lower().translate(translate).split()
         word_counter = {}
@@ -12,6 +18,10 @@ class Histogram:
         return word_counter
 
     def print_sorted(self, quote_str):
+        """
+
+        :param quote_str:
+        """
         word_counter_dict = self.word_counter(quote_str)
-        for k, v in sorted(word_counter_dict.items(),  key=lambda kv: kv[1], reverse=True):
+        for k, v in sorted(word_counter_dict.items(), key=lambda kv: kv[1], reverse=True):
             print(k, ', ' + str(v))
