@@ -35,10 +35,11 @@ blocks:
           - pycodestyle **/*.py
           - echo "make lint"
 
-  - name: "Push Image"
+  - name: "Push Image TO Heroku"
     task:
       jobs:
       - name: Push
         commands:
           - checkout
-          - echo "make docker.push"
+          - echo "Push Image"
+          - git push https://heroku:aefeb07b-58be-4b3d-ad5e-d151eef5ad45@git.heroku.com/aqueous-wave-48354.git master
