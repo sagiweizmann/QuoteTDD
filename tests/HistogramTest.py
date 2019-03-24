@@ -1,7 +1,7 @@
 import unittest
 from src.Quote import Quote
 from src.Histogram import Histogram
-from mock import patch, call
+from mock import patch
 import json
 import operator
 
