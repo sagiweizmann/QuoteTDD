@@ -28,6 +28,7 @@ blocks:
       - name: RSpec
         commands:
           - python -m unittest tests/*.py
+          - ls /home/semaphore/QuoteTDD/
           - echo "Unit tests"
       - name: Lint code
         commands:

@@ -23,8 +23,8 @@ class Quote:
         get_data = self.get_quote_as_json()
         convert = json.dumps(get_data)
         data = json.loads(convert)
-        with open("../mockquote/mockqoute1.json") as f:
-            data = json.load(f)
+        #with open("../mockquote/mockqoute1.json") as f:
+        #   data = json.load(f)
         return data
 
     def get_quote(self):
