@@ -29,7 +29,7 @@ blocks:
         commands:
           - ls /home/semaphore/QuoteTDD/tests
           - cd /home/semaphore/QuoteTDD/tests/
-          - python -m unittest tests/*.py
+          - python -m unittest *.py
           - echo "Unit tests"
       - name: Lint code
         commands:
