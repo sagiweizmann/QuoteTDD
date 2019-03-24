@@ -33,7 +33,7 @@ class HistogramTest(unittest.TestCase):
     def test3(self, func_quote):
         quote_obj = Quote()
         quote_obj.get_quote_as_dict = func_quote
-        with open("mockqoute1.json") as f:
+        with open("/home/semaphore/QuoteTDD/tests/mockqoute1.json") as f:
             quote_obj.get_quote_as_dict.return_value = json.load(f)
         quote = quote_obj.get_quote()
         histogram_obj = Histogram()
