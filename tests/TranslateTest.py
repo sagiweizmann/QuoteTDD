@@ -6,6 +6,7 @@ import json
 
 
 class TranslateTest(unittest.TestCase):
+
     @patch('src.Quote.Quote.get_quote_as_dict')
     @patch('src.Translate.Translate.translate')
     def test1(self, func_quote, translate_func):
@@ -16,7 +17,8 @@ class TranslateTest(unittest.TestCase):
         quote = quote_obj.get_quote()
         translate_obj = Translate()
         translate_obj.translate = translate_func
-        with open("/home/semaphore/QuoteTDD/tests/mocktranslate.txt",encoding="utf8") as f2:
+        path = "/home/semaphore/QuoteTDD/tests/mocktranslate.txt"
+        with open(path, encoding="utf8") as f2:
             translate_obj.translate.return_value = f2.read()
         result = translate_obj.translate(quote)
         strs = result.replace('[', '').split('],')
@@ -32,7 +34,8 @@ class TranslateTest(unittest.TestCase):
         quote = quote_obj.get_quote()
         translate_obj = Translate()
         translate_obj.translate = translate_func
-        with open("/home/semaphore/QuoteTDD/tests/mocktranslate.txt",encoding="utf8") as f2:
+        path = "/home/semaphore/QuoteTDD/tests/mocktranslate.txt"
+        with open(path, encoding="utf8") as f2:
             translate_obj.translate.return_value = f2.read()
         result = translate_obj.translate(quote)
         strs = result.replace('[', '').split('],')
@@ -48,7 +51,8 @@ class TranslateTest(unittest.TestCase):
         quote = quote_obj.get_quote()
         translate_obj = Translate()
         translate_obj.translate = translate_func
-        with open("/home/semaphore/QuoteTDD/tests/mocktranslate.txt",encoding="utf8") as f2:
+        path = "/home/semaphore/QuoteTDD/tests/mocktranslate.txt"
+        with open(path, encoding="utf8") as f2:
             translate_obj.translate.return_value = f2.read()
         result = translate_obj.translate(quote)
         strs = result.replace('[', '').split('],')
@@ -64,7 +68,8 @@ class TranslateTest(unittest.TestCase):
         quote = quote_obj.get_quote()
         translate_obj = Translate()
         translate_obj.translate = translate_func
-        with open("/home/semaphore/QuoteTDD/tests/mocktranslate.txt",encoding="utf8") as f2:
+        path = "/home/semaphore/QuoteTDD/tests/mocktranslate.txt"
+        with open(path, encoding="utf8") as f2:
             translate_obj.translate.return_value = f2.read()
         result = translate_obj.translate(quote)
         strs = result.replace('[', '').split('],')
@@ -80,9 +85,9 @@ class TranslateTest(unittest.TestCase):
         quote = quote_obj.get_quote()
         translate_obj = Translate()
         translate_obj.translate = translate_func
-        with open("/home/semaphore/QuoteTDD/tests/mocktranslate.txt",encoding="utf8") as f2:
+        path = "/home/semaphore/QuoteTDD/tests/mocktranslate.txt"
+        with open(path, encoding="utf8") as f2:
             translate_obj.translate.return_value = f2.read()
         result = translate_obj.translate(quote)
         strs = result.replace('[', '').split('],')
         assert strs[1].find('מלאי טוב') != -1
-

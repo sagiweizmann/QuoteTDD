@@ -9,7 +9,6 @@ class Quote:
     @staticmethod
     def get_quote_as_json():
         """
-
         :return:
         """
         quote_request = requests.get('https://favqs.com/api/qotd')
@@ -23,8 +22,8 @@ class Quote:
         get_data = self.get_quote_as_json()
         convert = json.dumps(get_data)
         data = json.loads(convert)
-        with open("../tests/mockqoute1.json") as f:
-           data = json.load(f)
+        # with open("../tests/mockqoute1.json") as f:
+        #   data = json.load(f)
         return data
 
     def get_quote(self):
